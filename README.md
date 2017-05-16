@@ -55,7 +55,7 @@ The examples are largely divided into 2 main groups -- algorithms and views.
 
 Applies a function to each element of the range.  
 
-[Full Example](blob/master/02_foreach_sequence.cpp)
+[Full Example](02_foreach_sequence.cpp)
 
 ```c++
 /* output
@@ -106,7 +106,7 @@ int main() {
 
 Tests a predicate against each element of the range returning a bool result.
 
-[Full Example](blob/master/06_all_any_none.cpp)
+[Full Example](06_all_any_none.cpp)
 
 ```c++
 
