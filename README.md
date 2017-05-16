@@ -40,7 +40,7 @@ In general examples will shorten code text by omiting includes and assuing the f
 #include <range/v3/all.hpp> //get everything 
 namespace rng = ranges::v3; //easy access
 
-#include <...various std library headers>
+#include <...various std library headers...>
 using namespace std;
 
 ```
@@ -55,12 +55,58 @@ The examples are largely divided into 2 main groups -- algorithms and views.
 
 Applies a function to each element of the range.  
 
+[Full Example](blob/master/02_foreach_sequence.cpp)
+
+```c++
+/* output
+vector:   1 2 3 4 5 6 
+array:    1 2 3 4 5 6 
+list:     1 2 3 4 5 6 
+fwd_list: 1 2 3 4 5 6 
+deque:    1 2 3 4 5 6 
+*/
+
+#include <range/v3/algorithm/for_each.hpp>   //specific includes
+//...includes omitted...
+
+auto print = [] (int i) { cout << i << " "; };
+
+int main() {
+
+  cout << "vector:   ";
+
+  vector<int> v { 1, 2, 3, 4, 5, 6 };
+  rng::for_each( v, print ); //1 2 3 4 5 6
+
+  cout << endl << "array:    ";
+
+  array<int, 6> a { 1, 2, 3, 4, 5, 6 };
+  rng::for_each( a, print ); 
+
+  cout << endl << "list:     ";
+  
+  list<int> ll { 1, 2, 3, 4, 5, 6 };
+  rng::for_each( ll, print );
+
+  cout << endl << "fwd_list: ";
+
+  forward_list<int> fl { 1, 2, 3, 4, 5, 6 };
+  rng::for_each( fl, print ); 
+
+  cout << endl << "deque:    ";
+  
+  deque<int> d { 1, 2, 3, 4, 5, 6 };
+  rng::for_each( d, print ); 
+
+  cout << endl;
+}
+```
 
 ###  all_of, any_of, none_of
 
 Tests a predicate against each element of the range returning a bool result.
 
-[Full Example](../blob/master/06_all_any_none.cpp)
+[Full Example](blob/master/06_all_any_none.cpp)
 
 ```c++
 
@@ -80,7 +126,7 @@ int main() {
 
   cout << "vector: ";
   vector<int> v { 6, 2, 3, 4, 5, 6 };
-  //...printing vector omitted..
+  //...printing vector omitted...
   
   auto is_six = [](int i) -> bool { return i == 6; };
 
