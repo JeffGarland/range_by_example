@@ -23,14 +23,13 @@ using namespace std;
 
 int main() {
 
-  string s { "a_string" };
+   string s { "hello" };
 
-  //output: a _ s t r i n g 
+  //output: h e l l o
   rng::for_each( s, [](char c){ cout << c << " "; });
 
   cout << endl;
 }
-
 ```
 
 ## Organization
