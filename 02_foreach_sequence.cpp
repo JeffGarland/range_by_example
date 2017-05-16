@@ -1,5 +1,3 @@
-// /home/jeff/devtools/gcc7/install/usr/local/bin/g++ -I /home/jeff/devtools/range_git/range-v3/include -std=c++17 02_foreach_sequence.cpp
-
 /* output
 vector:   1 2 3 4 5 6 
 array:    1 2 3 4 5 6 
@@ -51,7 +49,5 @@ int main() {
   rng::for_each( d, print ); 
 
   cout << endl;
-
-
 }
 

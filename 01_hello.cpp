@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-  string s { "hello" };
+   string s { "hello" };
 
   //output: h e l l o
   rng::for_each( s, [](char c){ cout << c << " "; });
