@@ -18,6 +18,6 @@ int main() {
   string letters = { "abcde" };
   auto   numbers = { 1, 2, 3, 4, 5 };
 
-  for (auto [l,n] : view::zip(letters, numbers))
+  for (auto [l,n] : view::zip(letters, numbers))  // Python style zip of two ranges
     cout << l << " : " << n << endl;
 }
