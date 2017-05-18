@@ -36,35 +36,35 @@ int main() {
 
   {
     vector<int> u;
-    auto it = rng::set_union(
-        s1.cbegin(), s1.cend(), s2.cbegin(), s2.cend(), rng::back_inserter(u));
+    auto it = rng::set_union(s1, s2, rng::back_inserter(u));
     cout << "union: ";
     output(u);
   }
 
   {
     vector<int> u;
-    auto it = rng::set_intersection(
-        s1.cbegin(), s1.cend(), s2.cbegin(), s2.cend(), rng::back_inserter(u));
+    auto it = rng::set_intersection(s1, s2, rng::back_inserter(u));
     cout << "intersection: ";
     output(u);
   }
+  // compile error on gcc7 pre-release
+ // could not convert ‘((const ranges::v3::copy_fn*)(& ranges::v3::{anonymous}::copy))->ranges::v3::copy_fn::operator()<__gnu_cxx::__normal_iterator<const int*, std::vector<int> >,
+  // {
+  //   vector<int> u;
+  //   auto it = rng::set_difference(
+  //       s1.cbegin(), s1.cend(), s2.cbegin(), s2.cend(), rng::back_inserter(u));
+  //   cout << "difference(s1,s2): ";
+  //   output(u);
+  // }
 
-  {
-    vector<int> u;
-    auto it = rng::set_difference(
-        s1.cbegin(), s1.cend(), s2.cbegin(), s2.cend(), rng::back_inserter(u));
-    cout << "difference(s1,s2): ";
-    output(u);
-  }
-
-  {
-    vector<int> u;
-    auto it = rng::set_difference(
-        s2.cbegin(), s2.cend(), s1.cbegin(), s1.cend(), rng::back_inserter(u));
-    cout << "difference(s2,s1): ";
-    output(u);
-  }
+  // {
+  //   vector<int> u;
+  //   auto it = rng::set_difference(
+  // 				  s2.cbegin(), s2.cend(), s1.cbegin(), s1.cend(), rng::back_inserter(u));
+  //       s2, s1, rng::back_inserter(u));
+  //   cout << "difference(s2,s1): ";
+  //   output(u);
+  // }
 
   {
     vector<int> u;
