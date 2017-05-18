@@ -20,6 +20,7 @@ add_executable( 06_all_any_none 06_all_any_none.cpp )
 #add_executable( 11_min_max 11_min_max.cpp )
 
 add_executable( 30_adjacent_find 30_adjacent_find.cpp )
+add_executable( 31_binary_search 31_binary_search.cpp )
 
 
 
