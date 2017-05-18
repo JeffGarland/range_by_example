@@ -1,10 +1,11 @@
 /* output
-min: 1 max: 6 
-min: 1 max: 6
-min element 1
-max element 6
-min ele: 1 max ele: 6
-no min element in empty vector
+set s1: 1 2 3 4 5 7
+set s2: 1 2 3 4 6 8
+union: 1 2 3 4 5 6 7 8
+intersection: 1 2 3 4
+difference(s1,s2): 5 7
+difference(s2,s1): 6 8
+symmetric_difference: 5 6 7 8
 */
 
 #include <range/v3/algorithm/set_algorithm.hpp>
