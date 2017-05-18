@@ -1,3 +1,8 @@
+/* output
+vector {1 2 3 3 4 5 }  has a repeated pair of entries starting at offset 2 (value 3)
+vector {1 2 4 7 11  } has a gap of 3 between entries 2 (value 4) and 3 (value 7)
+*/
+
 #include <range/v3/algorithm/for_each.hpp>
 #include <range/v3/algorithm/adjacent_find.hpp>
 namespace rng = ranges::v3;
