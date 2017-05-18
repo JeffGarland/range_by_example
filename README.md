@@ -143,5 +143,60 @@ int main() {
 }
 ```
 
+###  set_union, set_intersection
+
+Computes the union or intersection of two sets (sorted ranges).
+
+[Full Example](40_set_algos.cpp)
+
+```c++
+
+/* output
+set s1: 1 2 3 4 5 7
+set s2: 1 2 3 4 6 8
+union: 1 2 3 4 5 6 7 8
+intersection: 1 2 3 4
+*/
+
+#include <range/v3/algorithm/set_algorithm.hpp>
+//...standard includes omitted...
+
+namespace rng = ranges::v3;  //easy access
+
+void output(const vector<int>& range) {
+  for (auto i : range) {
+    cout << i << ' ';
+  }
+  cout << endl;
+}
+
+int main() {
+
+  vector<int> s1 = {1, 2, 3, 4, 5, 7};
+  cout << "set s1: ";
+  output(s1);
+
+  vector<int> s2 = {1, 2, 3, 4, 6, 8};
+  cout << "set s2: ";
+  output(s2);
+
+  {
+    vector<int> u;
+    auto it = rng::set_union(
+        s1.cbegin(), s1.cend(), s2.cbegin(), s2.cend(), rng::back_inserter(u));
+    cout << "union: ";
+    output(u);
+  }
+
+  {
+    vector<int> u;
+    auto it = rng::set_intersection(
+        s1.cbegin(), s1.cend(), s2.cbegin(), s2.cend(), rng::back_inserter(u));
+    cout << "intersection: ";
+    output(u);
+  }
+}
+```
+
 
 ## Views
