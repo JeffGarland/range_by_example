@@ -33,7 +33,7 @@ int main() {
 
 ## Example Conventions
 
-In general examples will shorten code text by omiting includes and assuing the following:
+In general examples will shorten code text by omitting includes and assuming the following:
 
 ```c++
 
