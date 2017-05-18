@@ -11,8 +11,6 @@ namespace rng = ranges::v3;
 #include <iostream>
 using namespace std;
 
-auto is_six = [](int i) -> bool { return i == 6; };
-
 int main() {
 
   cout << "vector:   ";
