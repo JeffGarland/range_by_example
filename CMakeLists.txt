@@ -30,3 +30,4 @@ add_executable( 50_zip 50_zip.cpp )
 
 add_executable( 60_drop 60_drop.cpp )
 add_executable( 61_stride 61_stride.cpp )
+add_executable( 62_even_odd_indicies 62_even_odd_indicies.cpp )
