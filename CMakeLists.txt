@@ -29,3 +29,4 @@ add_executable( 40_set_algos 40_set_algos.cpp )
 add_executable( 50_zip 50_zip.cpp )
 
 add_executable( 60_drop 60_drop.cpp )
+add_executable( 61_stride 61_stride.cpp )

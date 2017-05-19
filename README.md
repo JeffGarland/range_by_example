@@ -255,3 +255,34 @@ int main() {
   cout << endl;
 }
 ```
+
+### stride
+
+Lazily skip over elements in a range N elements per step.
+
+Given a source range and an integral stride value, return a range consisting of every Nth element, starting with the first.
+
+[Full Example](61_stride.cpp)
+
+[Try it yourself](https://wandbox.org/permlink/AeWAPzPPNscTmGlM)
+
+```c++
+/* output
+vector: 6 2 3 4 5 6 
+vector every 3rd value: 6 4 
+*/
+
+int main() {
+  auto print  = [](int i)         { cout << i << " "; };
+
+  cout << "vector: ";
+  vector<int> v { 6, 2, 3, 4, 5, 6, 7, 8, 9, 1, 0 };
+  rng::for_each(v, print); 
+  cout << endl;
+
+  cout << "vector every 3rd value: ";
+  auto strided = rng::view::stride(v, 3);
+  rng::for_each(strided, print); 
+  cout << endl;
+}
+```
