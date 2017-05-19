@@ -21,6 +21,7 @@ add_executable( 06_all_any_none 06_all_any_none.cpp )
 add_executable( 10_is_sorted 10_is_sorted.cpp )
 add_executable( 11_max_min 11_max_min.cpp )
 add_executable( 13_sort 13_sort.cpp )
+add_executable( 15_find 15_find.cpp )
 
 add_executable( 30_adjacent_find 30_adjacent_find.cpp )
 add_executable( 31_binary_search 31_binary_search.cpp )
