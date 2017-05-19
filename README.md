@@ -206,3 +206,52 @@ int main() {
 
 
 ## Views
+
+### drop, drop_exactly, drop_while
+
+Lazily remove elements from the beginning of a range.
+
+```drop```: Given a source range and an integral count, return a range consisting of all but the first count elements from the source range, or an empty range if it has fewer elements.
+
+```drop_exactly```: Given a source range and an integral count, return a range consisting of all but the first count elements from the source range. The source range must have at least that many elements.
+
+```drop_while```: Remove elements from the front of a range that satisfy a unary predicate.
+
+[Full Example](60_drop.cpp)
+
+[Try it yourself](https://wandbox.org/permlink/rcDuZ9YT2iKxnlph)
+
+```c++
+/* output
+vector: 6 2 3 4 5 6 
+vector drop half: 4 5 6 
+vector drop exactly one: 2 3 4 5 6 
+vector drop leading evens: 3 4 5 6 
+*/
+
+int main() {
+
+  auto print  = [](int i)         { cout << i << " "; };
+
+  cout << "vector: ";
+  vector<int> v { 6, 2, 3, 4, 5, 6 };
+  rng::for_each(v, print); 
+  cout << endl;
+  
+  cout << "vector drop half: ";
+  auto last_half = rng::view::drop(v, v.size()/2);
+  rng::for_each(last_half, print); 
+  cout << endl;
+  
+  cout << "vector drop exactly one: ";
+  auto dropped_1 = rng::view::drop(v, 1);
+  rng::for_each(dropped_1, print); 
+  cout << endl;
+
+  cout << "vector drop leading evens: ";
+  auto is_even = [](int i) { return i % 2 == 0; };
+  auto after_leading_evens = rng::view::drop_while(v, is_even);
+  rng::for_each(after_leading_evens, print); 
+  cout << endl;
+}
+```
