@@ -30,6 +30,8 @@ add_executable( 33_fizzbuzz 33_fizzbuzz.cpp )
 add_executable( 40_set_algos 40_set_algos.cpp )
 
 add_executable( 50_zip 50_zip.cpp )
+#disable for now -- see issue 2
+#add_executable( 51_moving_average 51_moving_average.cpp )
 
 add_executable( 60_drop 60_drop.cpp )
 add_executable( 61_stride 61_stride.cpp )
