@@ -57,6 +57,8 @@ Applies a function to each element of the range.
 
 [Full Example](02_foreach_sequence.cpp)
 
+[Try it yourself](https://wandbox.org/permlink/MPRED5rGIuk3K7WD)
+
 ```c++
 /* output
 vector:   1 2 3 4 5 6 
@@ -108,6 +110,8 @@ Tests a predicate against each element of the range returning a bool result.
 
 [Full Example](06_all_any_none.cpp)
 
+[Try it yourself](https://wandbox.org/permlink/Ks0DQv4wKHFt7AAi)
+
 ```c++
 
 /* output
@@ -148,6 +152,8 @@ int main() {
 Computes the union or intersection of two sets (sorted ranges).
 
 [Full Example](40_set_algos.cpp)
+
+[Try it yourself](https://wandbox.org/permlink/lhOc3bWl2UYRMR3T)
 
 ```c++
 
