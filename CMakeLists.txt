@@ -23,6 +23,7 @@ add_executable( 13_sort 13_sort.cpp )
 add_executable( 30_adjacent_find 30_adjacent_find.cpp )
 add_executable( 31_binary_search 31_binary_search.cpp )
 add_executable( 32_copy 32_copy.cpp )
+add_executable( 33_fizzbuzz 33_fizzbuzz.cpp )
 
 add_executable( 40_set_algos 40_set_algos.cpp )
 
