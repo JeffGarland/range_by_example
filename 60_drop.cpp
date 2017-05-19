@@ -6,8 +6,7 @@ vector drop leading evens: 3 4 5 6
 */
 
 #include <range/v3/view/drop.hpp>         //specific includes
-#include <range/v3/view/drop_exactly.hpp> //specific includes
-#include <range/v3/view/drop_while.hpp>   //specific includes
+#include <range/v3/view/drop_while.hpp>  
 #include <range/v3/algorithm/for_each.hpp> 
 namespace rng = ranges::v3;
 
