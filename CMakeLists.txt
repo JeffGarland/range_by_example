@@ -8,6 +8,8 @@ include_directories(${RANGE_INCLUDE})
 
 #probably not required for most
 add_definitions( -std=c++17 )
+add_definitions( -Wall -Wextra -Werror )   # all on and fatal by default
+add_definitions( -Wno-missing-braces )     # exclude those we disagree with
 
 add_executable( 01_hello 01_hello.cpp )
 add_executable( 02_foreach_sequence 02_foreach_sequence.cpp )
