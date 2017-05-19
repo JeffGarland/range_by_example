@@ -36,14 +36,14 @@ int main() {
 
   {
     vector<int> u;
-    auto it = rng::set_union(s1, s2, rng::back_inserter(u));
+    rng::set_union(s1, s2, rng::back_inserter(u));
     cout << "union: ";
     output(u);
   }
 
   {
     vector<int> u;
-    auto it = rng::set_intersection(s1, s2, rng::back_inserter(u));
+    rng::set_intersection(s1, s2, rng::back_inserter(u));
     cout << "intersection: ";
     output(u);
   }
@@ -68,7 +68,7 @@ int main() {
 
   {
     vector<int> u;
-    auto it = rng::set_symmetric_difference(
+    rng::set_symmetric_difference(
         s2.cbegin(), s2.cend(), s1.cbegin(), s1.cend(), rng::back_inserter(u));
     cout << "symmetric_difference: ";
     output(u);

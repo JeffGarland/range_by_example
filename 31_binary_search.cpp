@@ -1,6 +1,9 @@
 /* output
 */
 
+// suppress warning about iota using a half-open range
+#define RANGES_SUPPRESS_IOTA_WARNING
+
 #include <range/v3/algorithm/reverse.hpp>
 #include <range/v3/view/iota.hpp>
 #include <range/v3/algorithm/binary_search.hpp>
@@ -9,8 +12,6 @@ namespace rng = ranges::v3;
 #include <vector>
 #include <iostream>
 using namespace std;
-
-auto print = [] (int i) { cout << i << " "; };
 
 int main() {
 
