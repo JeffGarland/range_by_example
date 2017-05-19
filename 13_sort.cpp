@@ -45,7 +45,7 @@ int main() {
   deque<int> d { 6 , 2, 3, 4, 5, 1 };
   //sort in reverse 
   auto rcompare = [](int i, int j) { return i > j; };
-  rng::sort ( d, rcompare );  
+  rng::sort ( d, rcompare );  // 6 5 4 3 2 1 
   rng::for_each( d, print ); 
 
   cout << endl;
