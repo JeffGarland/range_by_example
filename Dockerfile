@@ -24,5 +24,7 @@ WORKDIR /src/build/
 COPY . /src/
 RUN cmake ..
 RUN make
+
+# clean crud then find and execute all examples
 RUN rm -rf CMake* && find . -type f -executable -exec '{}' ';' 
 
