@@ -10,5 +10,4 @@ before_install:
 script:
  - docker build .
 
-#script: "sudo bash -c ./scripts/travis/ubuntu-16-build.sh"
  
