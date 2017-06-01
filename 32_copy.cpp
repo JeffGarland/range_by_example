@@ -1,4 +1,5 @@
 /* output
+vector: { 1 2 3 4 5 6 7 8 }
 vector: { 11 12 3 4 5 6 7 8 9 10 }
 */
 
@@ -14,6 +15,13 @@ using namespace std;
 
 auto print = [] (int i) { cout << i << " "; };
 
+void print_vec(const vector<int>& v) 
+{
+  cout << "vector: { ";
+  rng::for_each(v, print);
+  cout << "}\n";
+}
+
 int main() {
 
   vector<int> v { 1, 2, 3, 4, 5 };
@@ -26,18 +34,17 @@ int main() {
   // copy from braced init list range
   rng::copy({6, 7, 8}, rng::back_inserter(v_cpy));
   assert( v_cpy.size() == 8 );
+  print_vec( v_cpy );
 
-  // you can copy from ranges  ("ints" gives a "half open" one, i.e. just 9 and 10):
+  // you can copy from ranges  ("ints" gives a "half open" one, 
+  // i.e. just 9 and 10):
   rng::copy(rng::view::ints(9, 11), rng::back_inserter(v_cpy));
   assert( v_cpy.size() == 10 );
   
-  // you can overwrite, too
+  // you can overwrite as well
   rng::copy(rng::view::ints(11, 13), v_cpy.begin());
   assert( v_cpy.size() == 10 );
-
-  cout << "vector: { ";
-  rng::for_each(v_cpy, print);
-  cout << "}\n";
+  print_vec( v_cpy );
 
 }
 
