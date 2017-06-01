@@ -132,12 +132,12 @@ ostream& operator<<(ostream& os, sparse_matrix_t<Index, Value> const& m) {
 
                   // iterate over the nonzero values
                   auto row_values =
-                    for_each(zip(zero_count, val),
-                             [](auto zc_val) {
-                               // construct sequence of 0's followed by the nonzero
-                               return concat(repeat_n(Value{0.0}, get<0>(zc_val)),
-                                             single(get<1>(zc_val)));
-                             });
+                    rng::view::for_each(zip(zero_count, val),
+                                        [](auto zc_val) {
+                                          // construct sequence of 0's followed by the nonzero
+                                          return concat(repeat_n(Value{0.0}, get<0>(zc_val)),
+                                                        single(get<1>(zc_val)));
+                                        });
 
                   // pad out remaining columns with zeros
                   auto full_row = take(concat(row_values, repeat(Value{0.0})),
@@ -187,11 +187,11 @@ transpose(sparse_matrix_t<Index, Value> m) {
   // scan the new row indices to locate row boundaries
   auto row_ind_it = begin(row_ind);
   Index old_row_cnt = m.row_ptr.size() - 1;
-  m.row_ptr = for_each(iota(Index{0}, m.col_cnt+1),
-                       [&](Index row) {
-                         row_ind_it = std::lower_bound(row_ind_it, row_ind.end(), row);
-                         return single(distance(row_ind.begin(), row_ind_it));
-                       });
+  m.row_ptr = rng::view::for_each(iota(Index{0}, m.col_cnt+1),
+                                  [&](Index row) {
+                                    row_ind_it = std::lower_bound(row_ind_it, row_ind.end(), row);
+                                    return single(distance(row_ind.begin(), row_ind_it));
+                                  });
   m.col_cnt = old_row_cnt;
 
   return m;
